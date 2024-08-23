@@ -28,10 +28,11 @@ const userSchema = new mongoose.Schema(
     },
   },
   {
+    // transformation is applied when the Mongoose document is serialized into a JSON object, 
     toJSON: {
       // like this we can modifey the return json
-      transform(doc, ret) {
-        console.log(...arguments);
+      transform(_, ret) {
+        // console.log(...arguments);
         ret.id = ret._id;
         delete ret._id;
         delete ret.__v;
@@ -66,3 +67,10 @@ const User = mongoose.model<UserDoc, UserModal>("User", userSchema);
 // }
 
 export { User };
+
+
+
+// and here some clarification for i used toJson() methos inside schema 
+// The toJSON method in your schema is only applied when you call JSON.stringify() on 
+// the document or when you send the document as a response. It's a way to modify how 
+// Mongoose document is converted to JSON, mainly when sending it to the client.
