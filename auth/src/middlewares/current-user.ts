@@ -17,7 +17,8 @@ export const curentUser = async (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
+) => {  
+  console.log("sess",req.session)
   if (!req.session?.jwt) {
     return next();
   }

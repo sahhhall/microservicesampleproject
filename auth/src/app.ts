@@ -1,6 +1,7 @@
 import express from "express";
 import "express-async-errors";
 import cookieSession from "cookie-session";
+import cors from "cors";
 
 import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
@@ -10,6 +11,12 @@ import { errorHandler } from "./middlewares/error-handler";
 import { NotFoundError } from "./errors/not-found-error";
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://192.168.49.2:30032', // Allows all domains
+  credentials: true // Allow cookies to be sent with requests
+}));
+
 app.use(express.json());
 app.use(
   cookieSession({
