@@ -16,7 +16,14 @@ spec:
               service:
                 name: auth-srv
                 port:
-                  number: 80    
+                  number: 80
+          - path: /api/orders/?(.*)
+            pathType: ImplementationSpecific 
+            backend:
+              service:
+                name: orders-srv
+                port:
+                  number: 80             
           - path: /?(.*)
             pathType: ImplementationSpecific 
             backend:

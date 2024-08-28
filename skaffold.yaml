@@ -27,7 +27,15 @@ build:
       sync:
         manual:
           - src: '**/*.js'
-            dest: .              
+            dest: .  
+    - image: sahhhall/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .                     
 deploy:
   kubectl:
     manifests:
