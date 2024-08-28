@@ -7,7 +7,8 @@ import jwt from "jsonwebtoken";
 declare global {
   var signin: () => string[];
 }
-// Define `mongo` with the correct type
+jest.mock('../nats-wrapper')
+
 let mongo: MongoMemoryServer;
 
 // Hook that runs before all tests
@@ -23,6 +24,7 @@ beforeAll(async () => {
 
 // Hook that runs before each test
 beforeEach(async () => {
+  jest.clearAllMocks()
   const collections = await mongoose.connection?.db?.collections();
 
   if (collections) {
