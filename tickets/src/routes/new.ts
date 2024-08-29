@@ -34,7 +34,8 @@ router.post(
       id:ticket.id,
       title: ticket.title,
       price: ticket.price,
-      userId: req.currentUser!.id as string
+      userId: req.currentUser!.id as string,
+      version: ticket.version
     })
     res.status(201).send(ticket)
   }

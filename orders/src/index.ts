@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import { app } from "./app";
 import { natsWrapper } from "./nats-wrapper";
+import { TicketCreatedListener } from "./events/listners/ticket-created-listner";
+import { TicketUpdatedListener } from "./events/listners/ticket-updated-listner";
 
 let port: number = 3000;
 
@@ -33,6 +35,8 @@ const start = async () => {
     // Handle termination signal (eg sent by process managers like k8)
     process.on("SIGTERM", () => natsWrapper.client.close());
 
+    new TicketCreatedListener(natsWrapper.client).listen();
+    new TicketUpdatedListener(natsWrapper.client).listen();
     // when we enter something on end it will create db for us
     await mongoose.connect(process.env.MONGO_URI);
     console.log("connected to mongodb");

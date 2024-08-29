@@ -10,7 +10,6 @@ import { Ticket } from "../models/ticket";
 import { natsWrapper } from "../nats-wrapper";
 import { TicketUpdatedPublisher } from "../events/publishers/ticket-update-publisher";
 
-
 const router = express.Router();
 
 router.put(
@@ -42,6 +41,7 @@ router.put(
       title: ticket.title,
       price: ticket.price,
       userId: req.currentUser!.id as string,
+      version: ticket.version,
     });
     res.send(ticket);
   }
