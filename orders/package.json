@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sahhhalltickets/common": "^1.0.14",
+    "@sahhhalltickets/common": "^1.0.15",
     "@types/cookie-parser": "^1.4.7",
     "@types/cookie-session": "^2.0.49",
     "@types/cors": "^2.8.17",
