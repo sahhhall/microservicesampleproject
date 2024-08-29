@@ -1,3 +1,4 @@
+import { OrderCreatedListener } from "./events/listeners/order-created-listener";
 import { natsWrapper } from "./nats-wrapper";
 
 
@@ -26,6 +27,8 @@ const start = async () => {
 
     // Handle termination signal (eg sent by process managers like k8)
     process.on("SIGTERM", () => natsWrapper.client.close());
+
+    new OrderCreatedListener(natsWrapper.client).listen();
   } catch (err) {
     console.log(err);
   }

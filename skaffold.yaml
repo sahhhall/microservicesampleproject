@@ -19,7 +19,15 @@ build:
       sync:
         manual:
           - src: '**/*.js'
-            dest: .   
+            dest: .
+    - image: sahhhall/expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "**/*.ts"
+            dest: .           
     - image: sahhhall/tickets
       context: tickets
       docker:

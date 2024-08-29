@@ -14,7 +14,7 @@ import { natsWrapper } from "../nats-wrapper";
 
 const router = express.Router();
 
-const EXIPIRATION_WINDOW_SECONDS = 15 * 60;
+const EXIPIRATION_WINDOW_SECONDS = 1 * 60;
 
 router.post(
   "/api/orders",
