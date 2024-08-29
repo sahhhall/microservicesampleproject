@@ -15,9 +15,11 @@ export class OrderCreatedListener extends Listner<OrderCreatedEvent> {
     console.log("waiting", delay)
     await expirationQueue.add({
       orderId: data.id
-    },{
+    },
+    {
       delay
-    })
+    }
+    )
     msg.ack()
   }
 }
