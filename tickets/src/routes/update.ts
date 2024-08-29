@@ -3,6 +3,7 @@ import {
   validateRequest,
   NotFoundError,
   NotAuthorizedError,
+  BadRequestError,
 } from "@sahhhalltickets/common";
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
@@ -27,7 +28,9 @@ router.put(
     if (!ticket) {
       throw new NotFoundError();
     }
-
+    if(ticket.orderId) {
+      throw new BadRequestError('sorry vro already reserved so you cant edit')
+    }
     if (ticket.userId !== req.currentUser?.id) {
       throw new NotAuthorizedError("not ");
     }
