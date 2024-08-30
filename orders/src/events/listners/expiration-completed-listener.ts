@@ -19,13 +19,18 @@ export class ExpirationCompleteListener extends Listner<ExpirationCompleteEvent>
     if (!order) {
       throw new Error("order not found");
     }
+    if (order.status === OrderStatus.Complete) {
+      return msg.ack();
+    }
     order.set({
       status: OrderStatus.Cancelled,
     });
 
     await order.save();
     // we have to publish event that order has cancelled
-    console.log("------am here to check is all work ----- expiation complete after 1 minute")
+    console.log(
+      "------am here to check is all work ----- expiation complete after 1 minute"
+    );
     await new OrderCancelledPublisher(this.client).publish({
       id: order.id,
       version: order.version,

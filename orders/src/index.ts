@@ -4,6 +4,7 @@ import { natsWrapper } from "./nats-wrapper";
 import { TicketCreatedListener } from "./events/listners/ticket-created-listner";
 import { TicketUpdatedListener } from "./events/listners/ticket-updated-listner";
 import { ExpirationCompleteListener } from "./events/listners/expiration-completed-listener";
+import { PaymentCreatedListener } from "./events/listners/payment-created-listener";
 
 let port: number = 3000;
 
@@ -39,6 +40,7 @@ const start = async () => {
     new TicketCreatedListener(natsWrapper.client).listen();
     new TicketUpdatedListener(natsWrapper.client).listen();
     new ExpirationCompleteListener(natsWrapper.client).listen();
+    new PaymentCreatedListener(natsWrapper.client).listen();
     // when we enter something on end it will create db for us
     await mongoose.connect(process.env.MONGO_URI);
     console.log("connected to mongodb");
