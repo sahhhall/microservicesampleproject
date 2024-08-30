@@ -9,6 +9,7 @@ import { PaymentCreatedListener } from "./events/listners/payment-created-listen
 let port: number = 3000;
 
 const start = async () => {
+  console.log("stating ")
   if (!process.env.MONGO_URI) {
     throw new Error("MONGO_URI must defined");
   }
