@@ -7,6 +7,7 @@ import {
   NotFoundError,
   curentUser,
 } from "@sahhhalltickets/common";
+import { createChargeRouter } from "./routes/new";
 
 
 
@@ -28,6 +29,8 @@ app.use(
 
 app.use(curentUser);
 
+
+app.use(createChargeRouter);
 
 app.all("*", async (req, res, next) => {
   throw new NotFoundError();
