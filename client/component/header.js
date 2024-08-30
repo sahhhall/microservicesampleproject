@@ -14,6 +14,14 @@ export default ({ currentUser }) => {
       label: "Signout",
       href: "http://192.168.49.2:30032/auth/signout",
     },
+    currentUser && {
+      label: "Sell tickets",
+      href: "http://192.168.49.2:30032/tickets/new",
+    },
+    currentUser && {
+      label: "My Orders",
+      href: "http://192.168.49.2:30032/orders",
+    },
   ]
     .filter((linkConfig) => linkConfig)
     .map(({ label, href }) => {
@@ -27,12 +35,35 @@ export default ({ currentUser }) => {
     });
 
   return (
-    <nav style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: '10px', backgroundColor: '#f8f9fa' }}>
-      <p style={{ color: 'red', fontWeight: 'bold', cursor: 'pointer' }}>
-        Ticketne
+    <nav
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        padding: "10px",
+        backgroundColor: "#000000",
+      }}
+    >
+      <p
+        style={{
+          color: "white",
+          letterSpacing: "2.6px",
+          fontWeight: "bolder",
+          fontSize: "25px",
+          cursor: "pointer",
+        }}
+      >
+        Ticketnew
       </p>
       <div>
-        <ul style={{ listStyleType: 'none', display: 'flex', gap: '15px' }}>
+        <ul
+          style={{
+            color: "white",
+            listStyleType: "none",
+            display: "flex",
+            gap: "15px",
+          }}
+        >
           {links}
         </ul>
       </div>

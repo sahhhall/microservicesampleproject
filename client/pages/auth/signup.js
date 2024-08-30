@@ -20,8 +20,8 @@ export default () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <h2>Signup</h2>
+      <form onSubmit={handleSubmit} className="border items-center border-black h-[250px] rounded w-[250px]" >
+        <h2 className="me-auto">Signup</h2>
         <div>
           <label className="mb-1 font-normal text-xs tracking-widest">
             Email
