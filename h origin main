@@ -1,0 +1,34 @@
+[33mfe3db48[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m)[m added started message
+[33mbd4994e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m add test script
+[33m42a143e[m Create tests.yml
+[33mba63e0e[m feat: client side done
+[33m0d6c334[m feat: added payment created listner - added listener to payment complete - changes in expiration-complete listnere for if the order completed not need to cancell so added login on there
+[33mb30afa2[m feat: created publisher for payment success
+[33m2afe5ba[m feat: updated common versions all over services to v16
+[33m9968cfe[m feat(infra/k8) : added config for payment and database
+[33m86c5c38[m feat: intial setup for payment service
+[33m5a9fc33[m feat: created listener for expiration in expiration service
+[33mcf6d083[m feat: added new event publisher for expiration timer
+[33m576dcd5[m feat: inital setup for expiration service
+[33mc8133df[m feat(infra/k8): add new Redis instance with expiration settings
+[33mac6e249[m feat: initial setup for expiration
+[33m4f4691b[m feat: done ticket service
+[33me201fdb[m feat: ticket updated listners added to order service
+[33m110ffa5[m feat: added order service and publisher
+[33mdf4d957[m feat: added ticket created event to tickets
+[33m22be010[m feat: done tickets service side -test cases also done
+[33mcdd3274[m feat(infra): add new deployment pipeline
+[33m17669e3[m feat: ticket service intial setup
+[33mc0e2fd7[m common
+[33mc6cc8d7[m feat : removed middlware error from auth service and added @sahhhall/common packge
+[33mfdfae4d[m feat: client side auth things all done
+[33m2e0dfc6[m test: teset each requests
+[33m6842bcf[m feat: added middlware for auth
+[33m3cd9801[m feat: sign in logic done
+[33m549f934[m feat: signup completed - changes in user modal for response json clarity removed unwanted keys and changed _id to id for consitency - changs in auth-deply added secret key
+[33m00d810e[m feat: added user modal
+[33m1514be2[m fix: ingress chaged to NodePort and async hadler npm
+[33m96f680e[m feat: error setuped
+[33m6d9a45f[m feat: added validation error by express validotor and implemeted class for handle those errors
+[33m4f4eec7[m feat: added router
+[33m7b6937c[m first commit
