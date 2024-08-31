@@ -4,6 +4,7 @@ import { app } from "./app";
 let port: number = 3000;
 
 const start = async () => {
+  console.log("staring ppppp")
   if(!process.env.MONGO_URI){
     throw new Error("MONGO_URI must defined")
   }
