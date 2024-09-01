@@ -2,6 +2,8 @@ import request from "supertest";
 import { app } from "../../app";
 
 it("failas when incorrect passowrd", async () => {
+  console.log("hi");
+  
   await request(app)
     .post("/api/users/signup")
     .send({
