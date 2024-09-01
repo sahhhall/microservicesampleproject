@@ -8,7 +8,7 @@ it("failas when incorrect passowrd", async () => {
       email: "test@test.com",
       password: "password",
     })
-    .expect(201);
+    .expect(202);
 
   return request(app)
     .post("/api/users/signin")
