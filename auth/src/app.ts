@@ -25,7 +25,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send("hi");
+  res.send("hi from ");
 });
 app.use(currentUserRouter);
 app.use(signinRouter);
